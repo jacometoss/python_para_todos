@@ -50,7 +50,7 @@ Las lecciones que se muestran a continuación se encuentran vinculadas a videos 
 | 21    | **Lección 21: Diagrama de flujo de la ecuación cuadrática con DFD y código en Python**. En esta lección elaborarás el diagrama de flujo para obtener las raíces de una ecuación cuadrática usando DFD y a partir del diagrama de flujo obtener el código en Python, te recomiendo ver las primeras 20 lecciones. *< Ver video >* | [Diapositiva](phython_para_todos_leccion_21.html)            | Intermedio |
 |       |                                                              |                                                              |            |
 
-<left><img src="docs\logo_informatica_interactiva.JPG" alt="ii" style="zoom:15%;" /></left>
+<left><img src="docs\logo_informatica_interactiva.JPG" alt="ii" style="zoom:20%;" /></left>
 
  [© Informática Interactiva](https://www.youtube.com/channel/UCkKqcTEofsFtdeNYaZUzuzw) 
 
