@@ -4,6 +4,10 @@
 
 Es un curso diseñado para personas impacientes que deseen aprender un nuevo lenguaje de programación para aplicarlo a tareas cotidianas. No necesitas tener conocimientos previos de programación y no importa el nivel de estudios que tengas este curso esta diseñado para todos.
 
+## ¿Para quié es este curso?
+
+A quien le guste la programación y desee ampliar sus conocimientos con este novedoso interprete. 
+
 ## **Objetivo del curso**
 
 Dar el conocimiento necesario para el manejo de paquetes hechos en Python como las habilidades para crear sus propios módulos.
