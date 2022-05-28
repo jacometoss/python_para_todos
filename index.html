@@ -1,0 +1,584 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<style type='text/css'>html {overflow-x: initial !important;}:root 
+{ --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+
+
+import url(https://fonts.googleapis.com/css?family=Open%20Sans);
+:root {
+    --code-block-bg-color: inherit;//#f8f8f8;
+
+    --item-hover-bg-color: #0a0d16;
+    --control-text-color: #b7b7b7;
+    --control-text-hover-color: #eee;
+    --window-border: 1px dashed #9b9b9b;
+
+    --active-file-bg-color: #0070E0;
+    --active-file-border-color: #8d8df0;
+
+    --primary-color: #a3d5fe;
+
+    --active-file-text-color: #0070e0;
+    --item-hover-bg-color: #70717d;
+    --item-hover-text-color: white;
+    --primary-color: #6dc1e7;
+}
+
+html,
+body,
+#write{
+	color: #1a0909;
+	font-family: "Open Sans", "Clear Sans", sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	/*font-weight: lighter;*/
+	font-weight: 100;
+	color: #1a0909;
+	font-family: "Open Sans", sans-serif;
+	margin: 0.5rem 0;
+}
+
+html {
+	font-size:16px;
+}
+
+#write {
+	max-width: 914px;
+	text-align: justify;
+}
+
+#write>h1:first-child {
+	margin-top: 2.75rem;
+}
+#write>h2:first-child {
+	margin-top: 1.75rem;
+}
+#write>h3:first-child {
+	margin-top: 1rem;
+}
+#write>h4:first-child {
+	margin-top: 0.5rem;
+}
+h1 {
+	margin: 1rem 0;
+	/*line-height: 4rem;
+	padding: 5px 30px;
+	text-align: center;
+	margin-top: 4rem;*/
+}
+h2 {
+	margin: 0.8rem 0;
+	/*
+	line-height: 3rem;
+	padding: 0 30px;
+	text-align: center;
+	margin-top: 3rem
+	*/
+}
+h3 {
+}
+h4 {
+}
+h5 {
+	font-size: 1.125rem;
+}
+h6 {
+	font-size: 1.1rem;
+}
+p {
+	color: #5e676d;
+	font-size: 1rem;
+	line-height: 1.5rem;
+	margin: 0 0 1.25rem;
+}
+#write>h3.md-focus:before {
+	left: -1.875rem;
+	top: 0.5rem;
+	padding: 2px;
+}
+#write>h4.md-focus:before {
+	left: -1.875rem;
+	top: 0.3125rem;
+	padding: 2px;
+}
+#write>h5.md-focus:before {
+	left: -1.875rem;
+	top: 0.25rem;
+	padding: 2px;
+}
+#write>h6.md-focus:before {
+	left: -1.875rem;
+	top: .125rem;
+	padding: 2px;
+}
+/*@media screen and (min-width: 48em) {
+	.h1,
+	h1 {
+		font-size: 3.250rem;
+	}
+	.h2,
+	h2 {
+		font-size: 2.298rem;
+	}
+	.h3,
+	h3 {
+		font-size: 1.625rem;
+	}
+	.h4,
+	h4 {
+		font-size: 1.250rem;
+	}
+	.h5,
+	h5 {
+		font-size: 1.150rem;
+	}
+	.h6,
+	h6 {
+		font-size: 1rem;
+	}
+	#write>h4.md-focus:before,
+	#write>h5.md-focus:before,
+	#write>h6.md-focus:before {
+		top: 1px;
+	}
+	p {
+		font-size: 1.25rem;
+		line-height: 1.8;
+	}
+	table {
+		font-size: 1.25rem;
+	}
+}*/
+@media screen and (max-width: 48em) {
+	blockquote {
+		margin-left: 1rem;
+		margin-right: 0;
+		padding: 0.5em;
+	}
+	.h1,
+	h1 {
+		font-size: 2.827rem;
+	}
+	.h2,
+	h2 {
+		font-size: 1.999rem;
+	}
+	.h3,
+	h3 {
+		font-size: 1.413rem;
+	}
+	.h4,
+	h4 {
+		font-size: 1.250rem;
+	}
+	.h5,
+	h5 {
+		font-size: 1.150rem;
+	}
+	.h6,
+	h6 {
+		font-size: 1rem;
+	}
+}
+a,
+.md-def-url {
+	color: #007ee5;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+table {
+	border: 1px solid #e2e2e2;
+	margin-bottom: 20px
+}
+table th,
+table td {
+	padding: 8px;
+	line-height: 1.5rem;
+	vertical-align: top;
+	border: 1px solid #e2e2e2;
+}
+table th {
+	font-weight: normal;
+	background-color: #f0f7fd;
+}
+table thead th {
+	vertical-align: bottom
+}
+table caption+thead tr:first-child th,
+table caption+thead tr:first-child td,
+table colgroup+thead tr:first-child th,
+table colgroup+thead tr:first-child td,
+table thead:first-child tr:first-child th,
+table thead:first-child tr:first-child td {
+	border-top: 0
+}
+table tbody+tbody {
+	border-top: 2px solid #ddd
+}
+code, .md-fences {
+	padding: .5em;
+	background: #f6f9fc;
+	border: 1px solid #d0d4d9;
+	border-radius: 3px;
+	padding: .1em;
+	font-size: 0.9rem !important;
+	margin-left: 0.2em;
+	margin-right: 0.2em;
+}
+.md-fences {
+	margin: 0 0 20px;
+	font-size: 1em;
+	padding: 0.3em 1em;
+  	padding-top: 0.4em;
+}
+.task-list{
+	padding-left: 0;
+}
+
+.task-list-item {
+	padding-left:2.125rem;
+}
+
+/* Chrome 29+ */
+@media screen and (-webkit-min-device-pixel-ratio:0)
+  and (min-resolution:.001dpcm) {
+    .task-list-item input:before {
+    	margin-top: -0.2rem;
+    }
+
+    .task-list-item input:checked:before,
+	.task-list-item input[checked]:before {
+		margin-top: -0.2rem;
+	}
+}
+
+blockquote {
+	margin: 0 0 1.11111rem;
+	padding: 0.5rem 1.11111rem 0 1.05556rem;
+	border-left: 2px solid rgba(0, 112, 224, 0.32);
+}
+blockquote,
+blockquote p {
+	line-height: 1.6;
+	color: #8f8f8f;
+}
+#write pre.md-meta-block {
+	min-height: 30px;
+	background: #f8f8f8;
+	padding: 1.5em;
+	font-weight: 300;
+	font-size: 1em;
+	padding-bottom: 1.5em;
+	padding-top: 3em;
+    margin-top: -1.5em;
+	color: #999;
+	border-left: 1000px #f8f8f8 solid;
+	margin-left: -1000px;
+	border-right: 1000px #f8f8f8 solid;
+	margin-right: -1000px;
+	margin-bottom: 2em;
+}
+.MathJax_Display {
+	font-size: 0.9em;
+	margin-top: 0.5em;
+	margin-bottom: 0;
+}
+p.mathjax-block,
+.mathjax-block {
+	padding-bottom: 0;
+}
+.mathjax-block>.code-tooltip {
+	bottom: 5px;
+	box-shadow: none;
+}
+.md-image>.md-meta {
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+}
+.md-image>img {
+	margin-top: 2px;
+}
+.md-image>.md-meta:first-of-type:before {
+	padding-left: 4px;
+}
+
+#typora-source {
+	color: #555;
+}
+
+/** ui for windows **/
+#md-searchpanel {
+    border-bottom: 1px solid #ccc;
+}
+
+#md-searchpanel .btn {
+    border: 1px solid #ccc;
+}
+
+#md-notification:before {
+	top: 14px;
+}
+
+#md-notification {
+	background: #eee;
+}
+
+.megamenu-menu-panel .btn {
+	border: 1px solid #ccc;
+}
+
+.mac-seamless-mode #typora-sidebar {
+  background-color: #f7f9fa;
+}
+
+.pin-outline .outline-active {
+  color: #0070E0; 
+}
+
+.file-list-item {
+  border-bottom: 1px solid;
+  border-color: #E6E8EB;
+}
+
+.file-list-item-summary {
+  font-weight: 400;
+  color: #637282; 
+}
+
+.file-list-item.active {
+  color: #0070E0;
+  background-color: #E6E8EB;
+}
+
+.file-tree-node.active>.file-node-background {
+  background-color: #E6E8EB;
+} 
+
+.file-tree-node.active>.file-node-content {
+  color: #0070E0;
+}
+
+.file-node-content {
+  color: #5e676d;
+}
+
+.sidebar-tab.active {
+  font-weight: 400;
+}
+
+code, kbd, pre, samp {
+  font-family: "Roboto Mono", Menlo, monospace;
+}
+
+
+</style><title>index</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><p><img src="https://i.ibb.co/2gvpvgx/python-para-todos.jpg" alt="python_para_todos" style="zoom:150%;" /></p><h1 id='python-para-todos'><strong><span>Python para todos</span></strong><span> </span></h1><p><span>Es un curso diseñado para personas impacientes que deseen aprender un nuevo lenguaje de programación para aplicarlo a tareas cotidianas. No necesitas tener conocimientos previos de programación y no importa el nivel de estudios que tengas este curso esta diseñado para todos.</span></p><h2 id='¿para-quién-es-este-curso'><strong><span>¿Para quién es este curso?</span></strong></h2><p><span>A quien le guste la programación y desee ampliar sus conocimientos con este novedoso interprete. </span></p><h2 id='objetivo-del-curso'><strong><span>Objetivo del curso</span></strong></h2><p><span>Dar el conocimiento necesario para el manejo de paquetes hechos en Python como las habilidades para crear sus propios módulos.</span></p><h2 id='requisitos'><strong><span>Requisitos</span></strong></h2><p><span>Si estas listo para iniciar este curso debes atender los puntos siguientes :</span></p><ul><li><span>Estar familiarizado con un sistema operativo entre los más populares en el mercado son : Windows, Linux, MacOs.</span></li><li><span>Saber instalar programas en el sistema operativo de su preferencia.</span></li><li><span>Conocer la estructura básica del sistema operativo.</span></li><li><span>Descargar Python 3.</span></li></ul><h2 id='lista-de-lecciones'><strong><span>Lista de lecciones </span></strong></h2><p><span>Las lecciones que se muestran a continuación se encuentran vinculadas a videos y las diapositivas son de fácil acceso para repaso del usuario.</span></p><figure><table><thead><tr><th><strong><span>#</span></strong></th><th><strong><span>Descripción</span></strong></th><th><strong><span>Recursos</span></strong></th><th><span>Nivel</span></th></tr></thead><tbody><tr><td><span>01</span></td><td><strong><span>Lección 01: Inicios de Python</span></strong><span>. En esta lección aprenderás que es un interprete y que es la compilación. Además,  sabrás acerca de los orígenes de Python. </span><a href='https://www.youtube.com/watch?v=wp73_QQGNzI'><em><span>&lt; Ver video &gt;</span></em></a></td><td><a href='https://jacometoss.github.io/python_para_todos/phython_para_todos_leccion_01.html'><span>Diapositiva</span></a></td><td><span>Fácil</span></td></tr><tr><td><span>02</span></td><td><strong><span>Lección 02 : Instalación de Python en Windows</span></strong><span>. En esta lección aprenderás a instalar Python en el sistema operativo Windows.         </span><a href='https://www.youtube.com/watch?v=uLzR4-Zjq5c&amp;t=443s'><em><span>&lt; Ver video &gt;</span></em></a></td><td><a href='phython_para_todos_leccion_02.html'><span>Diapositiva</span></a></td><td><span>Fácil</span></td></tr><tr><td><span>03</span></td><td><strong><span>Lección 03 : Personalización del IDLE</span></strong><span>. En esta lección aprenderás a instalar Python en el sistema operativo Windows.   </span><a href='https://www.youtube.com/watch?v=uLzR4-Zjq5c&amp;t=443s'><em><span>&lt; Ver video &gt;</span></em></a></td><td><a href='phython_para_todos_leccion_03.html'><span>Diapositiva</span></a></td><td><span>Fácil</span></td></tr><tr><td><span>04</span></td><td><strong><span>Lección 04 : Instalación de paquetes con el administrador PIP</span></strong><span>. En esta lección aprenderás a instalar paquetes en Python algunos paquetes importantes son : Numpy, Scipy y algunas bibliotecas como Matplotlib.  </span><a href='https://youtu.be/F0uCK7m76fs'><em><span>&lt; Ver video &gt;</span></em></a></td><td><a href='phython_para_todos_leccion_04.html'><span>Diapositiva</span></a></td><td><span>Fácil</span></td></tr><tr><td><span>05</span></td><td><strong><span>Lección 05 : Función print y comentarios</span></strong><span>. En esta lección aprenderás a usar la función </span><code>print</code><span> comentar tus archivos con extensión </span><code>*.py</code><span> y como codificar los archivos con el estándar </span><code>PEP263</code><span> </span><a href='https://www.youtube.com/watch?v=uLzR4-Zjq5c&amp;t=443s'><em><span>&lt; Ver video &gt;</span></em></a></td><td><a href='phython_para_todos_leccion_05.html'><span>Diapositiva</span></a></td><td><span>Fácil</span></td></tr><tr><td><span>06</span></td><td><strong><span>Lección 06 : Función help</span></strong><span>. En esta lección aprenderás a usar la sesión de ayuda </span><code>help()</code><span>y a consultar las palabras reservadas de Python mediante la importación de un módulo. </span><a href='https://www.youtube.com/watch?v=uLzR4-Zjq5c&amp;t=443s'><em><span>&lt; Ver video &gt;</span></em></a></td><td><a href='phython_para_todos_leccion_06.html'><span>Diapositiva</span></a></td><td><span>Fácil</span></td></tr><tr><td><span>07</span></td><td><strong><span>Lección 07 : Declarar variables</span></strong><span>. En esta lección aprenderás a declarar variables del tipo numérica, múltiple, booleana, hexadecimal, cadenas de texto y algunos de sus métodos.                       </span><a href='https://www.youtube.com/watch?v=uLzR4-Zjq5c&amp;t=443s'><em><span>&lt; Ver video &gt;</span></em></a></td><td><a href='phython_para_todos_leccion_07.html'><span>Diapositiva</span></a></td><td><span>Fácil</span></td></tr><tr><td><span>08</span></td><td><strong><span>Lección 08 : Operaciones básicas con cadenas</span></strong><span>. En esta lección aprenderás a algunas operaciones básicas con cadenas y a usar la función </span><code>type</code><span> y los métodos </span><code>upper()</code><span> y </span><code>lower()</code><span>. </span><a href='https://www.youtube.com/watch?v=uLzR4-Zjq5c&amp;t=443s'><em><span>&lt; Ver video &gt;</span></em></a></td><td><a href='phython_para_todos_leccion_08.html'><span>Diapositiva</span></a></td><td><span>Fácil</span></td></tr><tr><td><span>09</span></td><td><strong><span>Lección 09 : Evaluación de cadenas</span></strong><span>. En esta lección aprenderás a evaluar cadenas mediante algunos métodos como </span><code>isalpha()</code><span>, </span><code>isalnum()</code><span>, </span><code>isdecinal()</code><span>, </span><code>isdigit()</code><span>, </span><code>isnumeric()</code><span>, </span><code>isspace()</code><span>, </span><code>islower()</code><span>, </span><code>isupper()</code><span>, </span><code>istitle()</code><span> . </span><a href='https://www.youtube.com/watch?v=uLzR4-Zjq5c&amp;t=443s'><em><span>&lt; Ver video &gt;</span></em></a></td><td><a href='phython_para_todos_leccion_09.html'><span>Diapositiva</span></a></td><td><span>Fácil</span></td></tr><tr><td><span>10</span></td><td><strong><span>Lección 10 : Operadores aritméticos</span></strong><span>. En esta lección aprenderás los operadores aritméticos como es la suma, resta, multiplicación, división, potenciación, división parte entera y resto. </span><a href='https://www.youtube.com/watch?v=aRm3dB--UVI&amp;t=186s'><em><span>&lt; Ver video &gt;</span></em></a></td><td><a href='phython_para_todos_leccion_10.html'><span>Diapositiva</span></a></td><td><span>Fácil</span></td></tr><tr><td><span>11</span></td><td><strong><span>Lección 11 : Operadores binarios</span></strong><span>. En esta lección aprenderás los operadores binarios como son : </span><code>&amp; : and</code><span>, </span><code>|:or</code><span>,</span><code>^ : xor</code><span>,</span><code>: not</code><span>, </span><code>~ : not</code><span> , desplazamiento a la izquierda y derecha </span><code>&lt;&lt; o &gt;&gt;</code><span>. </span><a href='https://www.youtube.com/watch?v=uLzR4-Zjq5c&amp;t=443s'><em><span>&lt; Ver video &gt;</span></em></a></td><td><a href='phython_para_todos_leccion_11.html'><span>Diapositiva</span></a></td><td><span>Fácil</span></td></tr><tr><td><span>12</span></td><td><strong><span>Lección 12 : Operadores de comparación</span></strong><span>. En esta lección aprenderás los operadores de comparación que son : mayor que, menor que, menor o igual que, mayor o igual que, igual a, distinto de. </span><a href='https://www.youtube.com/watch?v=uLzR4-Zjq5c&amp;t=443s'><em><span>&lt; Ver video &gt;</span></em></a></td><td><a href='phython_para_todos_leccion_12.html'><span>Diapositiva</span></a></td><td><span>Fácil</span></td></tr><tr><td><span>13</span></td><td><strong><span>Lección 13 : Listas</span></strong><span>. En esta lección aprenderás como crear una lista estas son heterogéneas y mutables. También aprenderás algunos métodos como son :  </span><code>append()</code><span>, </span><code>count()</code><span>, </span><code>extend()</code><span>, </span><code>index()</code><span>, </span><code>insert()</code><span>, </span><code>pop()</code><span>, </span><code>remove()</code><span>, </span><code>reverse()</code><span>,  </span><code>sort()</code><span> y convertir listas con </span><code>list()</code><span>. </span><a href='https://www.youtube.com/watch?v=uLzR4-Zjq5c&amp;t=443s'><em><span>&lt; Ver video &gt;</span></em></a></td><td><a href='phython_para_todos_leccion_13.html'><span>Diapositiva</span></a></td><td><span>Fácil</span></td></tr><tr><td><span>14</span></td><td><strong><span>Lección 14 : Truplas</span></strong><span>. En esta lección aprenderás a utilizar las truplas que son un tipo de dato lista inmutable como los métodos </span><code>count()</code><span>, </span><code>index()</code><span> y conversión a truplas. </span><a href='https://www.youtube.com/watch?v=uLzR4-Zjq5c&amp;t=443s'><em><span>&lt; Ver video &gt;</span></em></a></td><td><a href='phython_para_todos_leccion_14.html'><span>Diapositiva</span></a></td><td><span>Fácil</span></td></tr><tr><td><span>15</span></td><td><strong><span>Lección 15 : Diccionarios</span></strong><span>. En esta lección aprenderás a utilizar los diccionarios en Python, son mutables, sin orden y es el único de mapeo estándar actual. También se verán algunos métodos como </span><code>clear()</code><span>, </span><code>copy()</code><span>, </span><code>fromkeys()</code><span>, </span><code>get()</code><span>, </span><code>items()</code><span>, </span><code>iteritems()</code><span>, </span><code>iterkeys()</code><span>, </span><code>itervalues()</code><span>, </span><code>keys()</code><span>, </span><code>pop()</code><span>, </span><code>popitem()</code><span>, </span><code>setdefault()</code><span>, </span><code>update()</code><span>, </span><code>values()</code><span>, </span><code>viewitems()</code><span>, </span><code>`viewkeys()</code><span>, </span><code>viewvalues()</code><span> entre algunas funciones y sentencias, finalmente como convertir a un diccionario. </span><a href='https://www.youtube.com/watch?v=uLzR4-Zjq5c&amp;t=443s'><em><span>&lt; Ver video &gt;</span></em></a></td><td><a href='phython_para_todos_leccion_15.html'><span>Diapositiva</span></a></td><td><span>Fácil</span></td></tr><tr><td><span>16</span></td><td><strong><span>Lección 16 : Conjuntos</span></strong><span>. En esta lección sobre los conjuntos, estos son una colección no ordenada y sin elementos repetidos encontramos la clase </span><code>set</code><span> que es un conjunto mutable, sin orden y no contiene duplicados y la clase </span><code>frozenset</code><span> que es un conjunto inmutable, sin orden y no contiene duplicados. También se verán algunos métodos </span><code>add()</code><span>, </span><code>clear()</code><span>, </span><code>copy()</code><span>, </span><code>difference()</code><span>, </span><code>diference_update()</code><span>, </span><code>discard()</code><span>,</span><code>intersection()</code><span>, </span><code>intersection_update()</code><span>, </span><code>indisjoint()</code><span>,</span><code>issubset()</code><span>, </span><code>issuperset()</code><span>,</span><code>pop()</code><span>, </span><code>remove()</code><span>, </span><code>union()</code><span>,</span><code>update()</code><span>. </span><em><span>&lt; Ver video &gt;</span></em></td><td><a href='phython_para_todos_leccion_16.html'><span>Diapositiva</span></a></td><td><span>Fácil</span></td></tr><tr><td><span>17</span></td><td><strong><span>Lección 17 : Estructura condicional</span></strong><span>. En esta lección usarás la condicional if  y la estructura de las sentencias </span><code>if</code><span>, </span><code>elif</code><span>, </span><code>else</code><span> como el operador </span><code>is</code><span> e </span><code>in</code><span>. </span><em><span>&lt; Ver video &gt;</span></em></td><td><a href='phython_para_todos_leccion_17.html'><span>Diapositiva</span></a></td><td><span>Fácil</span></td></tr><tr><td><span>18</span></td><td><strong><span>Lección 18: Ciclo mientras que</span></strong><span>. En esta lección aprenderás a usar el bucle  </span><code>while</code><span> controlado por conteo y por evento como son algunas sentencias (</span><code>break</code><span>, </span><code>continue</code><span>)  para romper o continuar en partes del ciclo. </span><em><span>&lt; Ver video &gt;</span></em></td><td><a href='phython_para_todos_leccion_18.html'><span>Diapositiva</span></a></td><td><span>Fácil</span></td></tr><tr><td><span>19</span></td><td><strong><span>Lección 19: Ciclo para</span></strong><span>. En esta lección aprenderás a usar el bucle  </span><code>for</code><span> utilizado comúnmente para el manejo de listas, tuplas y diccionarios. </span><em><span>&lt; Ver video &gt;</span></em></td><td><a href='phython_para_todos_leccion_19.html'><span>Diapositiva</span></a></td><td><span>Fácil</span></td></tr><tr><td><span>20</span></td><td><strong><span>Lección 20: Funciones sencillas</span></strong><span>. En esta lección conocerás la diferencia entre argumento y parámetro que lleva una función. Existen varias formas para definir una función  mediante argumentos por posición, nombre y por defecto o mediante argumentos indeterminados con las misma características mencionadas, usaremos la sentencia </span><code>return</code><span> y </span><code>pass</code><span>. . </span><em><span>&lt; Ver video &gt;</span></em></td><td><a href='phython_para_todos_leccion_20.html'><span>Diapositiva</span></a></td><td><span>Fácil</span></td></tr><tr><td><span>21</span></td><td><strong><span>Lección 21: Diagrama de flujo de ecuación cuadrática con DFD y Python</span></strong><span>. En esta lección elaborarás el diagrama de flujo para obtener las raíces de una ecuación cuadrática usando DFD y a partir del diagrama de flujo obtener el código en Python, te recomiendo ver las primeras 20 lecciones. </span><em><span>&lt; Ver video &gt;</span></em></td><td><a href='phython_para_todos_leccion_21.html'><span>Diapositiva</span></a></td><td><span>Intermedio</span></td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></tbody></table></figure><left><img src="C:\Users\toss\OneDrive\Escritorio\marp\logo_informatica_interactiva.JPG" alt="ii" style="zoom:15%;"></left><h2 id='redes-sociales-y-blogs'><strong><span>Redes sociales y blogs</span></strong></h2><p><span>Puedes seguirme en Facebook </span><a href='https://www.facebook.com/Mark-Polo-1920945868169736'><span>Mark Polo</span></a></p><h2 id='licencia'><strong><span>Licencia</span></strong></h2><p><em><strong><span>©Copyright 2022 en adelante, </span><a href='https://www.facebook.com/Mark-Polo-1920945868169736'><span>Marco Polo Jácome Toss</span></a></strong></em></p><p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a></p><p><span> </span><a href='https://www.youtube.com/channel/UCkKqcTEofsFtdeNYaZUzuzw'><span>©Informática Interactiva</span></a><span>  Esta obra está bajo una</span></p><p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><span>Licencia Creative Commons Atribución-CompartirIgual 4.0 Internacional</span></a><span>.</span></p><p><span>  </span><em><span>#python_para_todos</span></em></p><p>&nbsp;</p></div></div>
+</body>
+</html>
