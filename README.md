@@ -1,10 +1,10 @@
-![python_para_todos]([https://www.bytelion.com/wp-content/uploads/2015/12/python-banner.png](https://i.ibb.co/2gvpvgx/python-para-todos.jpg))
+<img src="https://i.ibb.co/2gvpvgx/python-para-todos.jpg" alt="python_para_todos" style="zoom:150%;" />
 
 # **Python para todos** 
 
 Es un curso diseñado para personas impacientes que deseen aprender un nuevo lenguaje de programación para aplicarlo a tareas cotidianas. No necesitas tener conocimientos previos de programación y no importa el nivel de estudios que tengas este curso esta diseñado para todos.
 
-## ¿Para quié es este curso?
+## **¿Para quién es este curso?**
 
 A quien le guste la programación y desee ampliar sus conocimientos con este novedoso interprete. 
 
@@ -28,16 +28,16 @@ Las lecciones que se muestran a continuación se encuentran vinculadas a videos 
 | **#** | **Descripción**                                              | **Recursos**                                                 | Nivel      |
 | ----- | ------------------------------------------------------------ | ------------------------------------------------------------ | ---------- |
 | 01    | **Lección 01: Inicios de Python**. En esta lección aprenderás que es un interprete y que es la compilación. Además,  sabrás acerca de los orígenes de Python. [*< Ver video >*](https://www.youtube.com/watch?v=wp73_QQGNzI) | [Diapositiva](https://jacometoss.github.io/python_para_todos/phython_para_todos_leccion_01.html) | Fácil      |
-| 02    | **Lección 02 : Instalación de Python en Windows**. En esta lección aprenderás a instalar Python en el sistema operativo Windows.         [*< Ver video >*](https://www.youtube.com/watch?v=uLzR4-Zjq5c&t=443s) | [Diapositiva](https://jacometoss.github.io/python_para_todos/phython_para_todos_leccion_02.html) | Fácil      |
-| 03    | **Lección 03 : Personalización del IDLE**. En esta lección aprenderás a instalar Python en el sistema operativo Windows.   [*< Ver video >*](https://www.youtube.com/watch?v=uLzR4-Zjq5c&t=443s) | [Diapositiva](https://jacometoss.github.io/python_para_todos/phython_para_todos_leccion_03.html) | Fácil      |
-| 04    | **Lección 04 : Instalación de paquetes con el administrador PIP**. En esta lección aprenderás a instalar paquetes en Python algunos paquetes importantes son : Numpy, Scipy y algunas bibliotecas como Matplotlib.  [*< Ver video >*](https://youtu.be/F0uCK7m76fs) | [Diapositiva](https://jacometoss.github.io/python_para_todos/phython_para_todos_leccion_04.html) | Fácil      |
-| 05    | **Lección 05 : Función print y comentarios**. En esta lección aprenderás a usar la función `print` comentar tus archivos con extensión `*.py` y como codificar los archivos con el estándar `PEP263` [*< Ver video >*](https://www.youtube.com/watch?v=uLzR4-Zjq5c&t=443s) | [Diapositiva](https://jacometoss.github.io/python_para_todos/phython_para_todos_leccion_05.html)            | Fácil      |
-| 06    | **Lección 06 : Función help**. En esta lección aprenderás a usar la sesión de ayuda `help()`y a consultar las palabras reservadas de Python mediante la importación de un módulo. [*< Ver video >*](https://www.youtube.com/watch?v=uLzR4-Zjq5c&t=443s) | [Diapositiva](https://jacometoss.github.io/python_para_todos/phython_para_todos_leccion_06.html) | Fácil      |
-| 07    | **Lección 07 : Declarar variables**. En esta lección aprenderás a declarar variables del tipo numérica, múltiple, booleana, hexadecimal, cadenas de texto y algunos de sus métodos.                       [*< Ver video >*](https://www.youtube.com/watch?v=uLzR4-Zjq5c&t=443s) | [Diapositiva](https://jacometoss.github.io/python_para_todos/phython_para_todos_leccion_07.html)            | Fácil      |
-| 08    | **Lección 08 : Operaciones básicas con cadenas**. En esta lección aprenderás a algunas operaciones básicas con cadenas y a usar la función `type` y los métodos `upper()` y `lower()`. [*< Ver video >*](https://www.youtube.com/watch?v=uLzR4-Zjq5c&t=443s) | [Diapositiva](https://jacometoss.github.io/python_para_todos/phython_para_todos_leccion_08.html)            | Fácil      |
+| 02    | **Lección 02 : Instalación de Python en Windows**. En esta lección aprenderás a instalar Python en el sistema operativo Windows.         [*< Ver video >*](https://www.youtube.com/watch?v=uLzR4-Zjq5c&t=443s) | [Diapositiva](phython_para_todos_leccion_02.html)            | Fácil      |
+| 03    | **Lección 03 : Personalización del IDLE**. En esta lección aprenderás a instalar Python en el sistema operativo Windows.   [*< Ver video >*](https://www.youtube.com/watch?v=uLzR4-Zjq5c&t=443s) | [Diapositiva](phython_para_todos_leccion_03.html)            | Fácil      |
+| 04    | **Lección 04 : Instalación de paquetes con el administrador PIP**. En esta lección aprenderás a instalar paquetes en Python algunos paquetes importantes son : Numpy, Scipy y algunas bibliotecas como Matplotlib.  [*< Ver video >*](https://youtu.be/F0uCK7m76fs) | [Diapositiva](phython_para_todos_leccion_04.html)            | Fácil      |
+| 05    | **Lección 05 : Función print y comentarios**. En esta lección aprenderás a usar la función `print` comentar tus archivos con extensión `*.py` y como codificar los archivos con el estándar `PEP263` [*< Ver video >*](https://www.youtube.com/watch?v=uLzR4-Zjq5c&t=443s) | [Diapositiva](phython_para_todos_leccion_05.html)            | Fácil      |
+| 06    | **Lección 06 : Función help**. En esta lección aprenderás a usar la sesión de ayuda `help()`y a consultar las palabras reservadas de Python mediante la importación de un módulo. [*< Ver video >*](https://www.youtube.com/watch?v=uLzR4-Zjq5c&t=443s) | [Diapositiva](phython_para_todos_leccion_06.html)            | Fácil      |
+| 07    | **Lección 07 : Declarar variables**. En esta lección aprenderás a declarar variables del tipo numérica, múltiple, booleana, hexadecimal, cadenas de texto y algunos de sus métodos.                       [*< Ver video >*](https://www.youtube.com/watch?v=uLzR4-Zjq5c&t=443s) | [Diapositiva](phython_para_todos_leccion_07.html)            | Fácil      |
+| 08    | **Lección 08 : Operaciones básicas con cadenas**. En esta lección aprenderás a algunas operaciones básicas con cadenas y a usar la función `type` y los métodos `upper()` y `lower()`. [*< Ver video >*](https://www.youtube.com/watch?v=uLzR4-Zjq5c&t=443s) | [Diapositiva](phython_para_todos_leccion_08.html)            | Fácil      |
 | 09    | **Lección 09 : Evaluación de cadenas**. En esta lección aprenderás a evaluar cadenas mediante algunos métodos como `isalpha()`, `isalnum()`, `isdecinal()`, `isdigit()`, `isnumeric()`, `isspace()`, `islower()`, `isupper()`, `istitle()` . [*< Ver video >*](https://www.youtube.com/watch?v=uLzR4-Zjq5c&t=443s) | [Diapositiva](phython_para_todos_leccion_09.html)            | Fácil      |
-| 10    | **Lección 10 : Operadores aritméticos**. En esta lección aprenderás los operadores aritméticos como es la suma, resta, multiplicación, división, potenciación, división parte entera y resto. [*< Ver video >*](https://www.youtube.com/watch?v=uLzR4-Zjq5c&t=443s) | [Diapositiva](https://jacometoss.github.io/python_para_todos/phython_para_todos_leccion_10.html)            | Fácil      |
-| 11    | **Lección 11 : Operadores binarios**. En esta lección aprenderás los operadores binarios como son : ` and`, `or`,` xor`,` not`, ` not` , desplazamiento a la izquierda y derecha . [*< Ver video >*](https://www.youtube.com/watch?v=uLzR4-Zjq5c&t=443s) | [Diapositiva](phython_para_todos_leccion_11.html)            | Fácil      |
+| 10    | **Lección 10 : Operadores aritméticos**. En esta lección aprenderás los operadores aritméticos como es la suma, resta, multiplicación, división, potenciación, división parte entera y resto. [*< Ver video >*](https://www.youtube.com/watch?v=aRm3dB--UVI&t=186s) | [Diapositiva](phython_para_todos_leccion_10.html)            | Fácil      |
+| 11    | **Lección 11 : Operadores binarios**. En esta lección aprenderás los operadores binarios como son : `& : and`, `|:or`,`^ : xor`,` : not`, `~ : not` , desplazamiento a la izquierda y derecha `<< o >>`. [*< Ver video >*](https://www.youtube.com/watch?v=uLzR4-Zjq5c&t=443s) | [Diapositiva](phython_para_todos_leccion_11.html)            | Fácil      |
 | 12    | **Lección 12 : Operadores de comparación**. En esta lección aprenderás los operadores de comparación que son : mayor que, menor que, menor o igual que, mayor o igual que, igual a, distinto de. [*< Ver video >*](https://www.youtube.com/watch?v=uLzR4-Zjq5c&t=443s) | [Diapositiva](phython_para_todos_leccion_12.html)            | Fácil      |
 | 13    | **Lección 13 : Listas**. En esta lección aprenderás como crear una lista estas son heterogéneas y mutables. También aprenderás algunos métodos como son :  `append()`, `count()`, `extend()`, `index()`, `insert()`, `pop()`, `remove()`, `reverse()`,  `sort()` y convertir listas con `list()`. [*< Ver video >*](https://www.youtube.com/watch?v=uLzR4-Zjq5c&t=443s) | [Diapositiva](phython_para_todos_leccion_13.html)            | Fácil      |
 | 14    | **Lección 14 : Truplas**. En esta lección aprenderás a utilizar las truplas que son un tipo de dato lista inmutable como los métodos `count()`, `index()` y conversión a truplas. [*< Ver video >*](https://www.youtube.com/watch?v=uLzR4-Zjq5c&t=443s) | [Diapositiva](phython_para_todos_leccion_14.html)            | Fácil      |
@@ -50,25 +50,21 @@ Las lecciones que se muestran a continuación se encuentran vinculadas a videos 
 | 21    | **Lección 21: Diagrama de flujo de ecuación cuadrática con DFD y Python**. En esta lección elaborarás el diagrama de flujo para obtener las raíces de una ecuación cuadrática usando DFD y a partir del diagrama de flujo obtener el código en Python, te recomiendo ver las primeras 20 lecciones. *< Ver video >* | [Diapositiva](phython_para_todos_leccion_21.html)            | Intermedio |
 |       |                                                              |                                                              |            |
 
-<left><img src="docs\logo_informatica_interactiva.JPG" alt="ii" style="zoom:5%;" /></left>
-
- [© Informática Interactiva](https://www.youtube.com/channel/UCkKqcTEofsFtdeNYaZUzuzw) 
-
-***© Copyright 2022, [Marco Polo Jácome Toss](https://www.facebook.com/Mark-Polo-1920945868169736)***
-
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
-
-Esta obra está bajo una
-
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Atribución-CompartirIgual 4.0 Internacional</a>.
-
-  #python_para_todos
+<left><img src="C:\Users\toss\OneDrive\Escritorio\marp\logo_informatica_interactiva.JPG" alt="ii" style="zoom:15%;" /></left>
 
 ## **Redes sociales y blogs**
 
 Puedes seguirme en Facebook [Mark Polo](https://www.facebook.com/Mark-Polo-1920945868169736)
 
-## Estadísticas 
+## **Licencia**
 
-<a href="https://info.flagcounter.com/LyPt"><img src="https://s11.flagcounter.com/count2/LyPt/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
+***©Copyright 2022 en adelante, [Marco Polo Jácome Toss](https://www.facebook.com/Mark-Polo-1920945868169736)***
+
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+
+ [©Informática Interactiva](https://www.youtube.com/channel/UCkKqcTEofsFtdeNYaZUzuzw)  Esta obra está bajo una
+
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Atribución-CompartirIgual 4.0 Internacional</a>.
+
+  *#python_para_todos*
 
