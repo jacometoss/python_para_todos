@@ -1,4 +1,4 @@
-![python_para_todos](https://www.bytelion.com/wp-content/uploads/2015/12/python-banner.png)
+![python_para_todos]([https://www.bytelion.com/wp-content/uploads/2015/12/python-banner.png](https://i.ibb.co/2gvpvgx/python-para-todos.jpg))
 
 # **Python para todos** 
 
