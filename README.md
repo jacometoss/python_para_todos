@@ -1,4 +1,4 @@
-<img src="https://i.ibb.co/2gvpvgx/python-para-todos.jpg" alt="python_para_todos" style="zoom:150%;" />
+<img src="https://i.ibb.co/2gvpvgx/python-para-todos.jpg" alt="python_para_todos" style="zoom:100%;" />
 
 # **Python para todos** 
 
