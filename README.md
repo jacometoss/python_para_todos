@@ -65,9 +65,5 @@ Puedes seguirme en Facebook [Mark Polo](https://www.facebook.com/Mark-Polo-19209
 Esta página forma parte del curso **[Python para todos](https://jacometoss.github.io/python_para_todos/)** por [Informatica Interactiva]([https://www.electricalwiresizes.org/](https://jacometoss.github.io/python_para_todos/)) que se distribuye bajo una [Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES).
 
 
-
- [©Informática Interactiva](https://www.youtube.com/channel/UCkKqcTEofsFtdeNYaZUzuzw)  
- Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Atribución-CompartirIgual 4.0 Internacional</a>.
-
   *#python_para_todos*
 
