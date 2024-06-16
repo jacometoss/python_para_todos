@@ -3,8 +3,7 @@
 <head>
 <meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
 
-<style type='text/css'>html {overflow-x: initial !important;}:root 
-{ --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
 .mac-os-11 { --title-bar-height:28px; }
 html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
 body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
@@ -202,31 +201,43 @@ mark .md-meta { color: rgb(0, 0, 0); }
 .md-inline-math-container mjx-container { zoom: 0.95; }
 
 
-import url(https://fonts.googleapis.com/css?family=Open%20Sans);
 :root {
-    --code-block-bg-color: inherit;//#f8f8f8;
-
-    --item-hover-bg-color: #0a0d16;
-    --control-text-color: #b7b7b7;
-    --control-text-hover-color: #eee;
-    --window-border: 1px dashed #9b9b9b;
-
-    --active-file-bg-color: #0070E0;
-    --active-file-border-color: #8d8df0;
-
-    --primary-color: #a3d5fe;
-
-    --active-file-text-color: #0070e0;
-    --item-hover-bg-color: #70717d;
-    --item-hover-text-color: white;
-    --primary-color: #6dc1e7;
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
 }
 
-html,
-body,
+@include-when-export url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
 #write{
-	color: #1a0909;
-	font-family: "Open Sans", "Clear Sans", sans-serif;
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 20px 30px 40px 30px;
+	padding-top: 20px;
+    padding-bottom: 100px;
+}
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+body > *:first-child {
+    margin-top: 0 !important;
+}
+body > *:last-child {
+    margin-bottom: 0 !important;
+}
+a {
+    color: #4183C4;
 }
 h1,
 h2,
@@ -234,351 +245,345 @@ h3,
 h4,
 h5,
 h6 {
-	/*font-weight: lighter;*/
-	font-weight: 100;
-	color: #1a0909;
-	font-family: "Open Sans", sans-serif;
-	margin: 0.5rem 0;
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
 }
-
-html {
-	font-size:16px;
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    /*background: url("file:///C://Users//toss//AppData//Roaming//images/modules/styleguide/para.png") no-repeat 10px center;*/
+    text-decoration: none;
 }
-
-#write {
-	max-width: 914px;
-	text-align: justify;
+h1 tt,
+h1 code {
+    font-size: inherit;
 }
-
-#write>h1:first-child {
-	margin-top: 2.75rem;
+h2 tt,
+h2 code {
+    font-size: inherit;
 }
-#write>h2:first-child {
-	margin-top: 1.75rem;
+h3 tt,
+h3 code {
+    font-size: inherit;
 }
-#write>h3:first-child {
-	margin-top: 1rem;
+h4 tt,
+h4 code {
+    font-size: inherit;
 }
-#write>h4:first-child {
-	margin-top: 0.5rem;
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
 }
 h1 {
-	margin: 1rem 0;
-	/*line-height: 4rem;
-	padding: 5px 30px;
-	text-align: center;
-	margin-top: 4rem;*/
+    padding-bottom: .3em;
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
 }
 h2 {
-	margin: 0.8rem 0;
-	/*
-	line-height: 3rem;
-	padding: 0 30px;
-	text-align: center;
-	margin-top: 3rem
-	*/
+   padding-bottom: .3em;
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
 }
 h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
 }
 h4 {
+    font-size: 1.25em;
 }
 h5 {
-	font-size: 1.125rem;
+    font-size: 1em;
 }
 h6 {
-	font-size: 1.1rem;
+   font-size: 1em;
+    color: #777;
 }
-p {
-	color: #1a0909;
-	font-size: 1rem;
-	line-height: 1.5rem;
-	margin: 0 0 1.25rem;
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
 }
-#write>h3.md-focus:before {
-	left: -1.875rem;
-	top: 0.5rem;
-	padding: 2px;
+li>ol,
+li>ul {
+    margin: 0 0;
 }
-#write>h4.md-focus:before {
-	left: -1.875rem;
-	top: 0.3125rem;
-	padding: 2px;
+hr {
+    height: 4px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+    border-bottom: 1px solid #ddd;
 }
-#write>h5.md-focus:before {
-	left: -1.875rem;
-	top: 0.25rem;
-	padding: 2px;
+
+body > h2:first-child {
+    margin-top: 0;
+    padding-top: 0;
 }
-#write>h6.md-focus:before {
-	left: -1.875rem;
-	top: .125rem;
-	padding: 2px;
+body > h1:first-child {
+    margin-top: 0;
+    padding-top: 0;
 }
-/*@media screen and (min-width: 48em) {
-	.h1,
-	h1 {
-		font-size: 3.250rem;
-	}
-	.h2,
-	h2 {
-		font-size: 2.298rem;
-	}
-	.h3,
-	h3 {
-		font-size: 1.625rem;
-	}
-	.h4,
-	h4 {
-		font-size: 1.250rem;
-	}
-	.h5,
-	h5 {
-		font-size: 1.150rem;
-	}
-	.h6,
-	h6 {
-		font-size: 1rem;
-	}
-	#write>h4.md-focus:before,
-	#write>h5.md-focus:before,
-	#write>h6.md-focus:before {
-		top: 1px;
-	}
-	p {
-		font-size: 1.25rem;
-		line-height: 1.8;
-	}
-	table {
-		font-size: 1.25rem;
-	}
-}*/
-@media screen and (max-width: 48em) {
-	blockquote {
-		margin-left: 1rem;
-		margin-right: 0;
-		padding: 0.5em;
-	}
-	.h1,
-	h1 {
-		font-size: 2.827rem;
-	}
-	.h2,
-	h2 {
-		font-size: 1.999rem;
-	}
-	.h3,
-	h3 {
-		font-size: 1.413rem;
-	}
-	.h4,
-	h4 {
-		font-size: 1.250rem;
-	}
-	.h5,
-	h5 {
-		font-size: 1.150rem;
-	}
-	.h6,
-	h6 {
-		font-size: 1rem;
-	}
+body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0;
 }
-a,
-.md-def-url {
-	color: #007ee5;
-	text-decoration: none;
+body > h3:first-child,
+body > h4:first-child,
+body > h5:first-child,
+body > h6:first-child {
+    margin-top: 0;
+    padding-top: 0;
 }
-a:hover {
-	text-decoration: underline;
+a:first-child h1,
+a:first-child h2,
+a:first-child h3,
+a:first-child h4,
+a:first-child h5,
+a:first-child h6 {
+    margin-top: 0;
+    padding-top: 0;
+}
+h1 p,
+h2 p,
+h3 p,
+h4 p,
+h5 p,
+h6 p {
+    margin-top: 0;
+}
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dddddd;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
 }
 table {
-	border: 1px solid #e2e2e2;
-	margin-bottom: 20px
+    padding: 0;
+    word-break: initial;
 }
-table th,
-table td {
-	padding: 8px;
-	line-height: 1.5rem;
-	vertical-align: top;
-	border: 1px solid #e2e2e2;
+table tr {
+    border-top: 1px solid #cccccc;
+    margin: 0;
+    padding: 0;
 }
-table th {
-	font-weight: normal;
-	background-color: #f0f7fd;
+table tr:nth-child(2n) {
+    background-color: #f8f8f8;
 }
-table thead th {
-	vertical-align: bottom
+table tr th {
+    font-weight: bold;
+    border: 1px solid #cccccc;
+    text-align: left;
+    margin: 0;
+    padding: 6px 13px;
 }
-table caption+thead tr:first-child th,
-table caption+thead tr:first-child td,
-table colgroup+thead tr:first-child th,
-table colgroup+thead tr:first-child td,
-table thead:first-child tr:first-child th,
-table thead:first-child tr:first-child td {
-	border-top: 0
+table tr td {
+    border: 1px solid #cccccc;
+    text-align: left;
+    margin: 0;
+    padding: 6px 13px;
 }
-table tbody+tbody {
-	border-top: 2px solid #ddd
+table tr th:first-child,
+table tr td:first-child {
+    margin-top: 0;
 }
-code, .md-fences {
-	padding: .5em;
-	background: #f6f9fc;
-	border: 1px solid #d0d4d9;
-	border-radius: 3px;
-	padding: .1em;
-	font-size: 0.9rem !important;
-	margin-left: 0.2em;
-	margin-right: 0.2em;
+table tr th:last-child,
+table tr td:last-child {
+    margin-bottom: 0;
 }
+
+.CodeMirror-gutters {
+    border-right: 1px solid #ddd;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    font-family: Consolas, "Liberation Mono", Courier, monospace;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
 .md-fences {
-	margin: 0 0 20px;
-	font-size: 1em;
-	padding: 0.3em 1em;
-  	padding-top: 0.4em;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding: 0.2em 1em;
+    padding-top: 8px;
+    padding-bottom: 6px;
 }
 .task-list{
 	padding-left: 0;
 }
 
 .task-list-item {
-	padding-left:2.125rem;
+	padding-left:32px;
 }
 
-/* Chrome 29+ */
-@media screen and (-webkit-min-device-pixel-ratio:0)
-  and (min-resolution:.001dpcm) {
-    .task-list-item input:before {
-    	margin-top: -0.2rem;
+.task-list-item input {
+  top: 3px;
+  left: 8px;
+}
+
+@media screen and (min-width: 914px) {
+    /*body {
+        width: 854px;
+        margin: 0 auto;
+    }*/
+}
+@media print {
+    html {
+        font-size: 13px;
     }
-
-    .task-list-item input:checked:before,
-	.task-list-item input[checked]:before {
-		margin-top: -0.2rem;
-	}
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
 }
 
-blockquote {
-	margin: 0 0 1.11111rem;
-	padding: 0.5rem 1.11111rem 0 1.05556rem;
-	border-left: 2px solid rgba(0, 112, 224, 0.32);
-}
-blockquote,
-blockquote p {
-	line-height: 1.6;
-	color: #8f8f8f;
+.md-fences {
+	background-color: #f8f8f8;
 }
 #write pre.md-meta-block {
-	min-height: 30px;
-	background: #f8f8f8;
-	padding: 1.5em;
-	font-weight: 300;
-	font-size: 1em;
-	padding-bottom: 1.5em;
-	padding-top: 3em;
-    margin-top: -1.5em;
-	color: #999;
-	border-left: 1000px #f8f8f8 solid;
-	margin-left: -1000px;
-	border-right: 1000px #f8f8f8 solid;
-	margin-right: -1000px;
-	margin-bottom: 2em;
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
 }
-.MathJax_Display {
-	font-size: 0.9em;
-	margin-top: 0.5em;
-	margin-bottom: 0;
-}
-p.mathjax-block,
-.mathjax-block {
-	padding-bottom: 0;
-}
+
 .mathjax-block>.code-tooltip {
-	bottom: 5px;
-	box-shadow: none;
+	bottom: .375rem;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
 }
 .md-image>.md-meta {
-	padding-left: 0.5em;
-	padding-right: 0.5em;
-}
-.md-image>img {
-	margin-top: 2px;
-}
-.md-image>.md-meta:first-of-type:before {
-	padding-left: 4px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    font-family: Consolas, "Liberation Mono", Courier, monospace;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
 }
 
-#typora-source {
-	color: #555;
+.md-tag{
+	color: inherit;
 }
 
-/** ui for windows **/
-#md-searchpanel {
-    border-bottom: 1px solid #ccc;
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
 }
 
-#md-searchpanel .btn {
-    border: 1px solid #ccc;
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
 }
 
 #md-notification:before {
-	top: 14px;
+    top: 10px;
 }
 
-#md-notification {
-	background: #eee;
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
 }
 
-.megamenu-menu-panel .btn {
-	border: 1px solid #ccc;
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
 }
 
 .mac-seamless-mode #typora-sidebar {
-  background-color: #f7f9fa;
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
 }
 
-.pin-outline .outline-active {
-  color: #0070E0; 
-}
-
-.file-list-item {
-  border-bottom: 1px solid;
-  border-color: #E6E8EB;
-}
-
-.file-list-item-summary {
-  font-weight: 400;
-  color: #637282; 
-}
-
-.file-list-item.active {
-  color: #0070E0;
-  background-color: #E6E8EB;
-}
-
-.file-tree-node.active>.file-node-background {
-  background-color: #E6E8EB;
-} 
-
-.file-tree-node.active>.file-node-content {
-  color: #0070E0;
-}
-
-.file-node-content {
-  color: #5e676d;
-}
-
-.sidebar-tab.active {
-  font-weight: 400;
-}
-
-code, kbd, pre, samp {
-  font-family: "Roboto Mono", Menlo, monospace;
+.md-lang {
+    color: #b4654d;
 }
 
 
-</style><title>Python para todos</title>
+
+</style><title>README</title>
 </head>
 <body class='typora-export os-windows'><div class='typora-export-content'>
-<div id='write'  class=''><p><img src="https://i.ibb.co/2gvpvgx/python-para-todos.jpg" alt="python_para_todos" style="zoom:150%;" /></p><h1 id='python-para-todos'><strong><span>Python para todos</span></strong><span> </span></h1><p><span>Es un curso diseñado para personas impacientes que deseen aprender un nuevo lenguaje de programación para aplicarlo a tareas cotidianas. No necesitas tener conocimientos previos de programación y no importa el nivel de estudios que tengas este curso esta diseñado para todos.</span></p><h2 id='¿para-quién-es-este-curso'><strong><span>¿Para quién es este curso?</span></strong></h2><p><span>A quien le guste la programación y desee ampliar sus conocimientos con este novedoso interprete. </span></p><h2 id='objetivo-del-curso'><strong><span>Objetivo del curso</span></strong></h2><p><span>Dar el conocimiento necesario para el manejo de paquetes hechos en Python como las habilidades para crear sus propios módulos.</span></p><h2 id='requisitos'><strong><span>Requisitos</span></strong></h2><p><span>Si estas listo para iniciar este curso debes atender los puntos siguientes :</span></p><ul><li><span>Estar familiarizado con un sistema operativo entre los más populares en el mercado son : Windows, Linux, MacOs.</span></li><li><span>Saber instalar programas en el sistema operativo de su preferencia.</span></li><li><span>Conocer la estructura básica del sistema operativo.</span></li><li><span>Descargar Python 3.</span></li></ul><h2 id='lista-de-lecciones'><strong><span>Lista de lecciones </span></strong></h2><p><span>Las lecciones que se muestran a continuación se encuentran vinculadas a videos y las diapositivas son de fácil acceso para repaso del usuario.</span></p><figure><table><thead><tr><th><strong><span>#</span></strong></th><th><strong><span>Descripción</span></strong></th><th><strong><span>Recursos</span></strong></th><th><span>Nivel</span></th></tr></thead><tbody><tr><td><span>01</span></td><td><strong><span>Lección 01: Inicios de Python</span></strong><span>. En esta lección aprenderás que es un interprete y que es la compilación. Además,  sabrás acerca de los orígenes de Python. </span><a href='https://www.youtube.com/watch?v=wp73_QQGNzI'><em><span>&lt; Ver video &gt;</span></em></a></td><td><a href='https://jacometoss.github.io/python_para_todos/phython_para_todos_leccion_01.html'><span>Diapositiva</span></a></td><td><span>Fácil</span></td></tr><tr><td><span>02</span></td><td><strong><span>Lección 02 : Instalación de Python en Windows</span></strong><span>. En esta lección aprenderás a instalar Python en el sistema operativo Windows.         </span><a href='https://www.youtube.com/watch?v=uLzR4-Zjq5c&amp;t=443s'><em><span>&lt; Ver video &gt;</span></em></a></td><td><a href='phython_para_todos_leccion_02.html'><span>Diapositiva</span></a></td><td><span>Fácil</span></td></tr><tr><td><span>03</span></td><td><strong><span>Lección 03 : Personalización del IDLE</span></strong><span>. En esta lección aprenderás a instalar Python en el sistema operativo Windows.   </span><a href='https://www.youtube.com/watch?v=uLzR4-Zjq5c&amp;t=443s'><em><span>&lt; Ver video &gt;</span></em></a></td><td><a href='phython_para_todos_leccion_03.html'><span>Diapositiva</span></a></td><td><span>Fácil</span></td></tr><tr><td><span>04</span></td><td><strong><span>Lección 04 : Instalación de paquetes con el administrador PIP</span></strong><span>. En esta lección aprenderás a instalar paquetes en Python algunos paquetes importantes son : Numpy, Scipy y algunas bibliotecas como Matplotlib.  </span><a href='https://youtu.be/F0uCK7m76fs'><em><span>&lt; Ver video &gt;</span></em></a></td><td><a href='phython_para_todos_leccion_04.html'><span>Diapositiva</span></a></td><td><span>Fácil</span></td></tr><tr><td><span>05</span></td><td><strong><span>Lección 05 : Función print y comentarios</span></strong><span>. En esta lección aprenderás a usar la función </span><code>print</code><span> comentar tus archivos con extensión </span><code>*.py</code><span> y como codificar los archivos con el estándar </span><code>PEP263</code><span> </span><a href='https://www.youtube.com/watch?v=uLzR4-Zjq5c&amp;t=443s'><em><span>&lt; Ver video &gt;</span></em></a></td><td><a href='phython_para_todos_leccion_05.html'><span>Diapositiva</span></a></td><td><span>Fácil</span></td></tr><tr><td><span>06</span></td><td><strong><span>Lección 06 : Función help</span></strong><span>. En esta lección aprenderás a usar la sesión de ayuda </span><code>help()</code><span>y a consultar las palabras reservadas de Python mediante la importación de un módulo. </span><a href='https://www.youtube.com/watch?v=uLzR4-Zjq5c&amp;t=443s'><em><span>&lt; Ver video &gt;</span></em></a></td><td><a href='phython_para_todos_leccion_06.html'><span>Diapositiva</span></a></td><td><span>Fácil</span></td></tr><tr><td><span>07</span></td><td><strong><span>Lección 07 : Declarar variables</span></strong><span>. En esta lección aprenderás a declarar variables del tipo numérica, múltiple, booleana, hexadecimal, cadenas de texto y algunos de sus métodos.                       </span><a href='https://www.youtube.com/watch?v=uLzR4-Zjq5c&amp;t=443s'><em><span>&lt; Ver video &gt;</span></em></a></td><td><a href='phython_para_todos_leccion_07.html'><span>Diapositiva</span></a></td><td><span>Fácil</span></td></tr><tr><td><span>08</span></td><td><strong><span>Lección 08 : Operaciones básicas con cadenas</span></strong><span>. En esta lección aprenderás a algunas operaciones básicas con cadenas y a usar la función </span><code>type</code><span> y los métodos </span><code>upper()</code><span> y </span><code>lower()</code><span>. </span><a href='https://www.youtube.com/watch?v=uLzR4-Zjq5c&amp;t=443s'><em><span>&lt; Ver video &gt;</span></em></a></td><td><a href='phython_para_todos_leccion_08.html'><span>Diapositiva</span></a></td><td><span>Fácil</span></td></tr><tr><td><span>09</span></td><td><strong><span>Lección 09 : Evaluación de cadenas</span></strong><span>. En esta lección aprenderás a evaluar cadenas mediante algunos métodos como </span><code>isalpha()</code><span>, </span><code>isalnum()</code><span>, </span><code>isdecinal()</code><span>, </span><code>isdigit()</code><span>, </span><code>isnumeric()</code><span>, </span><code>isspace()</code><span>, </span><code>islower()</code><span>, </span><code>isupper()</code><span>, </span><code>istitle()</code><span> . </span><a href='https://www.youtube.com/watch?v=uLzR4-Zjq5c&amp;t=443s'><em><span>&lt; Ver video &gt;</span></em></a></td><td><a href='phython_para_todos_leccion_09.html'><span>Diapositiva</span></a></td><td><span>Fácil</span></td></tr><tr><td><span>10</span></td><td><strong><span>Lección 10 : Operadores aritméticos</span></strong><span>. En esta lección aprenderás los operadores aritméticos como es la suma, resta, multiplicación, división, potenciación, división parte entera y resto. </span><a href='https://www.youtube.com/watch?v=aRm3dB--UVI&amp;t=186s'><em><span>&lt; Ver video &gt;</span></em></a></td><td><a href='phython_para_todos_leccion_10.html'><span>Diapositiva</span></a></td><td><span>Fácil</span></td></tr><tr><td><span>11</span></td><td><strong><span>Lección 11 : Operadores binarios</span></strong><span>. En esta lección aprenderás los operadores binarios como son : </span><code>&amp; : and</code><span>, </span><code>|:or</code><span>,</span><code>^ : xor</code><span>,</span><code>: not</code><span>, </span><code>~ : not</code><span> , desplazamiento a la izquierda y derecha </span><code>&lt;&lt; o &gt;&gt;</code><span>. </span><a href='https://www.youtube.com/watch?v=uLzR4-Zjq5c&amp;t=443s'><em><span>&lt; Ver video &gt;</span></em></a></td><td><a href='phython_para_todos_leccion_11.html'><span>Diapositiva</span></a></td><td><span>Fácil</span></td></tr><tr><td><span>12</span></td><td><strong><span>Lección 12 : Operadores de comparación</span></strong><span>. En esta lección aprenderás los operadores de comparación que son : mayor que, menor que, menor o igual que, mayor o igual que, igual a, distinto de. </span><a href='https://www.youtube.com/watch?v=uLzR4-Zjq5c&amp;t=443s'><em><span>&lt; Ver video &gt;</span></em></a></td><td><a href='phython_para_todos_leccion_12.html'><span>Diapositiva</span></a></td><td><span>Fácil</span></td></tr><tr><td><span>13</span></td><td><strong><span>Lección 13 : Listas</span></strong><span>. En esta lección aprenderás como crear una lista estas son heterogéneas y mutables. También aprenderás algunos métodos como son :  </span><code>append()</code><span>, </span><code>count()</code><span>, </span><code>extend()</code><span>, </span><code>index()</code><span>, </span><code>insert()</code><span>, </span><code>pop()</code><span>, </span><code>remove()</code><span>, </span><code>reverse()</code><span>,  </span><code>sort()</code><span> y convertir listas con </span><code>list()</code><span>. </span><a href='https://www.youtube.com/watch?v=uLzR4-Zjq5c&amp;t=443s'><em><span>&lt; Ver video &gt;</span></em></a></td><td><a href='phython_para_todos_leccion_13.html'><span>Diapositiva</span></a></td><td><span>Fácil</span></td></tr><tr><td><span>14</span></td><td><strong><span>Lección 14 : Truplas</span></strong><span>. En esta lección aprenderás a utilizar las truplas que son un tipo de dato lista inmutable como los métodos </span><code>count()</code><span>, </span><code>index()</code><span> y conversión a truplas. </span><a href='https://www.youtube.com/watch?v=uLzR4-Zjq5c&amp;t=443s'><em><span>&lt; Ver video &gt;</span></em></a></td><td><a href='phython_para_todos_leccion_14.html'><span>Diapositiva</span></a></td><td><span>Fácil</span></td></tr><tr><td><span>15</span></td><td><strong><span>Lección 15 : Diccionarios</span></strong><span>. En esta lección aprenderás a utilizar los diccionarios en Python, son mutables, sin orden y es el único de mapeo estándar actual. También se verán algunos métodos como </span><code>clear()</code><span>, </span><code>copy()</code><span>, </span><code>fromkeys()</code><span>, </span><code>get()</code><span>, </span><code>items()</code><span>, </span><code>iteritems()</code><span>, </span><code>iterkeys()</code><span>, </span><code>itervalues()</code><span>, </span><code>keys()</code><span>, </span><code>pop()</code><span>, </span><code>popitem()</code><span>, </span><code>setdefault()</code><span>, </span><code>update()</code><span>, </span><code>values()</code><span>, </span><code>viewitems()</code><span>, </span><code>`viewkeys()</code><span>, </span><code>viewvalues()</code><span> entre algunas funciones y sentencias, finalmente como convertir a un diccionario. </span><a href='https://www.youtube.com/watch?v=uLzR4-Zjq5c&amp;t=443s'><em><span>&lt; Ver video &gt;</span></em></a></td><td><a href='phython_para_todos_leccion_15.html'><span>Diapositiva</span></a></td><td><span>Fácil</span></td></tr><tr><td><span>16</span></td><td><strong><span>Lección 16 : Conjuntos</span></strong><span>. En esta lección sobre los conjuntos, estos son una colección no ordenada y sin elementos repetidos encontramos la clase </span><code>set</code><span> que es un conjunto mutable, sin orden y no contiene duplicados y la clase </span><code>frozenset</code><span> que es un conjunto inmutable, sin orden y no contiene duplicados. También se verán algunos métodos </span><code>add()</code><span>, </span><code>clear()</code><span>, </span><code>copy()</code><span>, </span><code>difference()</code><span>, </span><code>diference_update()</code><span>, </span><code>discard()</code><span>,</span><code>intersection()</code><span>, </span><code>intersection_update()</code><span>, </span><code>indisjoint()</code><span>,</span><code>issubset()</code><span>, </span><code>issuperset()</code><span>,</span><code>pop()</code><span>, </span><code>remove()</code><span>, </span><code>union()</code><span>,</span><code>update()</code><span>. </span><em><span>&lt; Ver video &gt;</span></em></td><td><a href='phython_para_todos_leccion_16.html'><span>Diapositiva</span></a></td><td><span>Fácil</span></td></tr><tr><td><span>17</span></td><td><strong><span>Lección 17 : Estructura condicional</span></strong><span>. En esta lección usarás la condicional if  y la estructura de las sentencias </span><code>if</code><span>, </span><code>elif</code><span>, </span><code>else</code><span> como el operador </span><code>is</code><span> e </span><code>in</code><span>. </span><em><span>&lt; Ver video &gt;</span></em></td><td><a href='phython_para_todos_leccion_17.html'><span>Diapositiva</span></a></td><td><span>Fácil</span></td></tr><tr><td><span>18</span></td><td><strong><span>Lección 18: Ciclo mientras que</span></strong><span>. En esta lección aprenderás a usar el bucle  </span><code>while</code><span> controlado por conteo y por evento como son algunas sentencias (</span><code>break</code><span>, </span><code>continue</code><span>)  para romper o continuar en partes del ciclo. </span><em><span>&lt; Ver video &gt;</span></em></td><td><a href='phython_para_todos_leccion_18.html'><span>Diapositiva</span></a></td><td><span>Fácil</span></td></tr><tr><td><span>19</span></td><td><strong><span>Lección 19: Ciclo para</span></strong><span>. En esta lección aprenderás a usar el bucle  </span><code>for</code><span> utilizado comúnmente para el manejo de listas, tuplas y diccionarios. </span><em><span>&lt; Ver video &gt;</span></em></td><td><a href='phython_para_todos_leccion_19.html'><span>Diapositiva</span></a></td><td><span>Fácil</span></td></tr><tr><td><span>20</span></td><td><strong><span>Lección 20: Funciones sencillas</span></strong><span>. En esta lección conocerás la diferencia entre argumento y parámetro que lleva una función. Existen varias formas para definir una función  mediante argumentos por posición, nombre y por defecto o mediante argumentos indeterminados con las misma características mencionadas, usaremos la sentencia </span><code>return</code><span> y </span><code>pass</code><span>. . </span><em><span>&lt; Ver video &gt;</span></em></td><td><a href='phython_para_todos_leccion_20.html'><span>Diapositiva</span></a></td><td><span>Fácil</span></td></tr><tr><td><span>21</span></td><td><strong><span>Lección 21: Diagrama de flujo de ecuación cuadrática con DFD y Python</span></strong><span>. En esta lección elaborarás el diagrama de flujo para obtener las raíces de una ecuación cuadrática usando DFD y a partir del diagrama de flujo obtener el código en Python, te recomiendo ver las primeras 20 lecciones. </span><em><span>&lt; Ver video &gt;</span></em></td><td><a href='phython_para_todos_leccion_21.html'><span>Diapositiva</span></a></td><td><span>Intermedio</span></td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></tbody></table></figure><left><img src="C:\Users\toss\OneDrive\Escritorio\marp\logo_informatica_interactiva.JPG" alt="ii" style="zoom:15%;"></left><h2 id='redes-sociales-y-blogs'><strong><span>Redes sociales y blogs</span></strong></h2><p><span>Puedes seguirme en Facebook </span><a href='https://www.facebook.com/'><span>Mark Polo</span></a></p><h2 id='licencia'><strong><span>Licencia</span></strong></h2><p><em><strong><span>©Copyright 2022 en adelante, </span><a href='https://www.facebook.com/Mark-Polo-1920945868169736'><span>Marco Polo Jácome Toss</span></a></strong></em></p><p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a></p><p><span> </span><a href='https://www.youtube.com/channel/UCkKqcTEofsFtdeNYaZUzuzw'><span>©Informática Interactiva</span></a><span>  Esta obra está bajo una</span></p><p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><span>Licencia Creative Commons Atribución-CompartirIgual 4.0 Internacional</span></a><span>.</span></p><p><span>  </span><em><span>#python_para_todos</span></em></p><p>&nbsp;</p></div></div>
+<div id='write'  class=''><p><img src="https://i.ibb.co/2gvpvgx/python-para-todos.jpg" alt="python_para_todos" style="zoom:100%;" /></p><h1 id='python-para-todos'><strong><span>Python para todos</span></strong><span> </span></h1><p><span>Es un curso diseñado para personas impacientes que deseen aprender un nuevo lenguaje de programación para aplicarlo a tareas cotidianas. No necesitas tener conocimientos previos de programación y no importa el nivel de estudios que tengas este curso esta diseñado para todos.</span></p><h2 id='¿para-quién-es-este-curso'><strong><span>¿Para quién es este curso?</span></strong></h2><p><span>A quien le guste la programación y desee ampliar sus conocimientos con este novedoso interprete. </span></p><h2 id='objetivo-del-curso'><strong><span>Objetivo del curso</span></strong></h2><p><span>Proporcionar el conocimiento necesario para manejar paquetes desarrollados en Python, así como las habilidades para crear módulos personalizados.</span></p><h2 id='requisitos'><strong><span>Requisitos</span></strong></h2><p><span>Para comenzar este curso, es necesario que cumplas con los siguientes requisitos:</span></p><ul><li><span>Familiaridad con uno de los sistemas operativos más populares del mercado, como Windows, Linux o macOS.</span></li><li><span>Capacidad para instalar programas en tu sistema operativo preferido.</span></li><li><span>Conocimiento básico de la estructura de un sistema operativo.</span></li><li><span>Tener instalado Python 3.</span></li></ul><h2 id='lista-de-lecciones'><strong><span>Lista de lecciones </span></strong></h2><p><span>Las lecciones siguientes están vinculadas a videos y diapositivas de fácil acceso para que los usuarios puedan repasarlas cómodamente.</span></p><figure><table><thead><tr><th><strong><span>#</span></strong></th><th><strong><span>Descripción</span></strong></th><th><strong><span>Recursos</span></strong></th><th><span>Nivel</span></th></tr></thead><tbody><tr><td><span>01</span></td><td><strong><span>Lección 01: Inicios de Python</span></strong><span>. En esta lección aprenderás que es un interprete y que es la compilación. Además,  sabrás acerca de los orígenes de Python. </span><a href='https://www.youtube.com/watch?v=wp73_QQGNzI'><em><span>&lt; Ver video &gt;</span></em></a></td><td><a href='https://jacometoss.github.io/python_para_todos/phython_para_todos_leccion_01.html'><span>Diapositiva</span></a></td><td><span>Fácil</span></td></tr><tr><td><span>02</span></td><td><strong><span>Lección 02 : Instalación de Python en Windows</span></strong><span>. En esta lección aprenderás a instalar Python en el sistema operativo Windows.         </span><a href='https://youtu.be/B-N62hkyjDg?list=PLcOTy6BG6s04xyNA25tBNJ0GEybeSi_rf'><em><span>&lt; Ver video &gt;</span></em></a></td><td><a href='https://jacometoss.github.io/python_para_todos/phython_para_todos_leccion_02.html'><span>Diapositiva</span></a></td><td><span>Fácil</span></td></tr><tr><td><span>03</span></td><td><strong><span>Lección 03 : Personalización del IDLE</span></strong><span>. En esta lección aprenderás a instalar Python en el sistema operativo Windows.   </span><a href='https://youtu.be/rtV00SfbwXU?list=PLcOTy6BG6s04xyNA25tBNJ0GEybeSi_rf'><em><span>&lt; Ver video &gt;</span></em></a></td><td><a href='https://jacometoss.github.io/python_para_todos/phython_para_todos_leccion_03.html'><span>Diapositiva</span></a></td><td><span>Fácil</span></td></tr><tr><td><span>04</span></td><td><strong><span>Lección 04 : Instalación de paquetes con el administrador PIP</span></strong><span>. En esta lección aprenderás a instalar paquetes en Python algunos paquetes importantes son : Numpy, Scipy y algunas bibliotecas como Matplotlib.  </span><a href='https://youtu.be/F0uCK7m76fs?list=PLcOTy6BG6s04xyNA25tBNJ0GEybeSi_rf'><em><span>&lt; Ver video &gt;</span></em></a></td><td><a href='https://jacometoss.github.io/python_para_todos/phython_para_todos_leccion_04.html'><span>Diapositiva</span></a></td><td><span>Fácil</span></td></tr><tr><td><span>05</span></td><td><strong><span>Lección 05 : Función print y comentarios</span></strong><span>. En esta lección aprenderás a usar la función </span><code>print</code><span> comentar tus archivos con extensión </span><code>*.py</code><span> y como codificar los archivos con el estándar </span><code>PEP263</code><span> </span><a href='https://youtu.be/O_k2I1JTlx8?list=PLcOTy6BG6s04xyNA25tBNJ0GEybeSi_rf'><em><span>&lt; Ver video &gt;</span></em></a></td><td><a href='https://jacometoss.github.io/python_para_todos/phython_para_todos_leccion_05.html'><span>Diapositiva</span></a></td><td><span>Fácil</span></td></tr><tr><td><span>06</span></td><td><strong><span>Lección 06 : Función help</span></strong><span>. En esta lección aprenderás a usar la sesión de ayuda </span><code>help()</code><span>y a consultar las palabras reservadas de Python mediante la importación de un módulo. </span><a href='https://youtu.be/O5Js7BlwZEM?list=PLcOTy6BG6s04xyNA25tBNJ0GEybeSi_rf'><em><span>&lt; Ver video &gt;</span></em></a></td><td><a href='https://jacometoss.github.io/python_para_todos/phython_para_todos_leccion_06.html'><span>Diapositiva</span></a></td><td><span>Fácil</span></td></tr><tr><td><span>07</span></td><td><strong><span>Lección 07 : Declarar variables</span></strong><span>. En esta lección aprenderás a declarar variables del tipo numérica, múltiple, booleana, hexadecimal, cadenas de texto y algunos de sus métodos.                       </span><a href='https://youtu.be/02uU4NHl48s?list=PLcOTy6BG6s04xyNA25tBNJ0GEybeSi_rf'><em><span>&lt; Ver video &gt;</span></em></a></td><td><a href='https://jacometoss.github.io/python_para_todos/phython_para_todos_leccion_07.html'><span>Diapositiva</span></a></td><td><span>Fácil</span></td></tr><tr><td><span>08</span></td><td><strong><span>Lección 08 : Operaciones básicas con cadenas</span></strong><span>. En esta lección aprenderás a algunas operaciones básicas con cadenas y a usar la función </span><code>type</code><span> y los métodos </span><code>upper()</code><span> y </span><code>lower()</code><span>. </span><a href='https://youtu.be/0x_3q3a4nBM?list=PLcOTy6BG6s04xyNA25tBNJ0GEybeSi_rf'><em><span>&lt; Ver video &gt;</span></em></a></td><td><a href='https://jacometoss.github.io/python_para_todos/phython_para_todos_leccion_08.html'><span>Diapositiva</span></a></td><td><span>Fácil</span></td></tr><tr><td><span>09</span></td><td><strong><span>Lección 09 : Evaluación de cadenas</span></strong><span>. En esta lección aprenderás a evaluar cadenas mediante algunos métodos como </span><code>isalpha()</code><span>, </span><code>isalnum()</code><span>, </span><code>isdecinal()</code><span>, </span><code>isdigit()</code><span>, </span><code>isnumeric()</code><span>, </span><code>isspace()</code><span>, </span><code>islower()</code><span>, </span><code>isupper()</code><span>, </span><code>istitle()</code><span> . </span><a href='https://youtu.be/tW8GqunxHRQ?list=PLcOTy6BG6s04xyNA25tBNJ0GEybeSi_rf'><em><span>&lt; Ver video &gt;</span></em></a></td><td><a href='https://jacometoss.github.io/python_para_todos/phython_para_todos_leccion_09.html'><span>Diapositiva</span></a></td><td><span>Fácil</span></td></tr><tr><td><span>10</span></td><td><strong><span>Lección 10 : Operadores aritméticos</span></strong><span>. En esta lección aprenderás los operadores aritméticos como es la suma, resta, multiplicación, división, potenciación, división parte entera y resto. </span><a href='https://youtu.be/aRm3dB--UVI?list=PLcOTy6BG6s04xyNA25tBNJ0GEybeSi_rf'><em><span>&lt; Ver video &gt;</span></em></a></td><td><a href='https://jacometoss.github.io/python_para_todos/phython_para_todos_leccion_10.html'><span>Diapositiva</span></a></td><td><span>Fácil</span></td></tr><tr><td><span>11</span></td><td><strong><span>Lección 11 : Operadores binarios</span></strong><span>. En esta lección aprenderás los operadores binarios como son : </span><code>and</code><span>, </span><code>or</code><span>,</span><code>xor</code><span>,</span><code>not</code><span>, </span><code>not</code><span> , desplazamiento a la izquierda y derecha </span><code>o</code><span>. </span><a href='https://youtu.be/8uwAZE3dkTI?list=PLcOTy6BG6s04xyNA25tBNJ0GEybeSi_rf'><em><span>&lt; Ver video &gt;</span></em></a></td><td><a href='https://jacometoss.github.io/python_para_todos/phython_para_todos_leccion_11.html'><span>Diapositiva</span></a></td><td><span>Fácil</span></td></tr><tr><td><span>12</span></td><td><strong><span>Lección 12 : Operadores de comparación</span></strong><span>. En esta lección aprenderás los operadores de comparación que son : mayor que, menor que, menor o igual que, mayor o igual que, igual a, distinto de. </span><a href='https://youtu.be/OuA_M_IV-js?list=PLcOTy6BG6s04xyNA25tBNJ0GEybeSi_rf'><em><span>&lt; Ver video &gt;</span></em></a></td><td><a href='phython_para_todos_leccion_12.html'><span>Diapositiva</span></a></td><td><span>Fácil</span></td></tr><tr><td><span>13</span></td><td><strong><span>Lección 13 : Listas</span></strong><span>. En esta lección aprenderás como crear una lista estas son heterogéneas y mutables. También aprenderás algunos métodos como son :  </span><code>append()</code><span>, </span><code>count()</code><span>, </span><code>extend()</code><span>, </span><code>index()</code><span>, </span><code>insert()</code><span>, </span><code>pop()</code><span>, </span><code>remove()</code><span>, </span><code>reverse()</code><span>,  </span><code>sort()</code><span> y convertir listas con </span><code>list()</code><span>. </span><a href='https://youtu.be/PHzExRCl8nw?list=PLcOTy6BG6s04xyNA25tBNJ0GEybeSi_rf'><em><span>&lt; Ver video &gt;</span></em></a></td><td><a href='https://jacometoss.github.io/python_para_todos/phython_para_todos_leccion_13.html'><span>Diapositiva</span></a></td><td><span>Fácil</span></td></tr><tr><td><span>14</span></td><td><strong><span>Lección 14 : Truplas</span></strong><span>. En esta lección aprenderás a utilizar las truplas que son un tipo de dato lista inmutable como los métodos </span><code>count()</code><span>, </span><code>index()</code><span> y conversión a truplas. </span><a href='https://youtu.be/f-yD3M79V58?list=PLcOTy6BG6s04xyNA25tBNJ0GEybeSi_rf'><em><span>&lt; Ver video &gt;</span></em></a></td><td><a href='https://jacometoss.github.io/python_para_todos/phython_para_todos_leccion_14.html'><span>Diapositiva</span></a></td><td><span>Fácil</span></td></tr><tr><td><span>15</span></td><td><strong><span>Lección 15 : Diccionarios</span></strong><span>. En esta lección aprenderás a utilizar los diccionarios en Python, son mutables, sin orden y es el único de mapeo estándar actual. También se verán algunos métodos como </span><code>clear()</code><span>, </span><code>copy()</code><span>, </span><code>fromkeys()</code><span>, </span><code>get()</code><span>, </span><code>items()</code><span>, </span><code>iteritems()</code><span>, </span><code>iterkeys()</code><span>, </span><code>itervalues()</code><span>, </span><code>keys()</code><span>, </span><code>pop()</code><span>, </span><code>popitem()</code><span>, </span><code>setdefault()</code><span>, </span><code>update()</code><span>, </span><code>values()</code><span>, </span><code>viewitems()</code><span>, </span><code>`viewkeys()</code><span>, </span><code>viewvalues()</code><span> entre algunas funciones y sentencias, finalmente como convertir a un diccionario. </span><a href='https://youtu.be/1QQe8AE7LqA?list=PLcOTy6BG6s04xyNA25tBNJ0GEybeSi_rf'><em><span>&lt; Ver video, parte 1 &gt;</span></em></a><span>  </span><a href='https://youtu.be/GZtuGdQXQFk?list=PLcOTy6BG6s04xyNA25tBNJ0GEybeSi_rf'><em><span>&lt; Ver video, parte 2 &gt;</span></em></a><span>  </span><a href='https://youtu.be/DSt6vA1le9o?list=PLcOTy6BG6s04xyNA25tBNJ0GEybeSi_rf'><em><span>&lt; Ver video, parte 3 &gt;</span></em></a><span> </span><a href='https://youtu.be/hhzQ38QNwl4?list=PLcOTy6BG6s04xyNA25tBNJ0GEybeSi_rf'><em><span>&lt; Ver video, parte 4 &gt;</span></em></a></td><td><a href='https://jacometoss.github.io/python_para_todos/phython_para_todos_leccion_15.html'><span>Diapositiva</span></a></td><td><span>Fácil</span></td></tr><tr><td><span>16</span></td><td><strong><span>Lección 16 : Conjuntos</span></strong><span>. En esta lección sobre los conjuntos, estos son una colección no ordenada y sin elementos repetidos encontramos la clase </span><code>set</code><span> que es un conjunto mutable, sin orden y no contiene duplicados y la clase </span><code>frozenset</code><span> que es un conjunto inmutable, sin orden y no contiene duplicados. También se verán algunos métodos </span><code>add()</code><span>, </span><code>clear()</code><span>, </span><code>copy()</code><span>, </span><code>difference()</code><span>, </span><code>diference_update()</code><span>, </span><code>discard()</code><span>,</span><code>intersection()</code><span>, </span><code>intersection_update()</code><span>, </span><code>indisjoint()</code><span>,</span><code>issubset()</code><span>, </span><code>issuperset()</code><span>,</span><code>pop()</code><span>, </span><code>remove()</code><span>, </span><code>union()</code><span>,</span><code>update()</code><span>. </span><em><span>&lt; Ver video &gt;</span></em></td><td><a href='https://jacometoss.github.io/python_para_todos/phython_para_todos_leccion_16.html'><span>Diapositiva</span></a></td><td><span>Fácil</span></td></tr><tr><td><span>17</span></td><td><strong><span>Lección 17 : Estructura condicional</span></strong><span>. En esta lección usarás la condicional if  y la estructura de las sentencias </span><code>if</code><span>, </span><code>elif</code><span>, </span><code>else</code><span> como el operador </span><code>is</code><span> e </span><code>in</code><span>. </span><em><span>&lt; Ver video &gt;</span></em></td><td><a href='https://jacometoss.github.io/python_para_todos/phython_para_todos_leccion_17.html'><span>Diapositiva</span></a></td><td><span>Fácil</span></td></tr><tr><td><span>18</span></td><td><strong><span>Lección 18: Ciclo mientras que</span></strong><span>. En esta lección aprenderás a usar el bucle  </span><code>while</code><span> controlado por conteo y por evento como son algunas sentencias (</span><code>break</code><span>, </span><code>continue</code><span>)  para romper o continuar en partes del ciclo. </span><em><span>&lt; Ver video &gt;</span></em></td><td><a href='https://jacometoss.github.io/python_para_todos/phython_para_todos_leccion_18.html'><span>Diapositiva</span></a></td><td><span>Fácil</span></td></tr><tr><td><span>19</span></td><td><strong><span>Lección 19: Ciclo para</span></strong><span>. En esta lección aprenderás a usar el bucle  </span><code>for</code><span> utilizado comúnmente para el manejo de listas, tuplas y diccionarios. </span><em><span>&lt; Ver video &gt;</span></em></td><td><a href='https://jacometoss.github.io/python_para_todos/phython_para_todos_leccion_19.html'><span>Diapositiva</span></a></td><td><span>Fácil</span></td></tr><tr><td><span>20</span></td><td><strong><span>Lección 20: Funciones sencillas</span></strong><span>. En esta lección conocerás la diferencia entre argumento y parámetro que lleva una función. Existen varias formas para definir una función  mediante argumentos por posición, nombre y por defecto o mediante argumentos indeterminados con las misma características mencionadas, usaremos la sentencia </span><code>return</code><span> y </span><code>pass</code><span>. . </span><em><span>&lt; Ver video &gt;</span></em></td><td><a href='https://jacometoss.github.io/python_para_todos/phython_para_todos_leccion_20.html'><span>Diapositiva</span></a></td><td><span>Fácil</span></td></tr><tr><td><span>21</span></td><td><strong><span>Lección 21: Diagrama de flujo de ecuación cuadrática con DFD y Python</span></strong><span>. En esta lección elaborarás el diagrama de flujo para obtener las raíces de una ecuación cuadrática usando DFD y a partir del diagrama de flujo obtener el código en Python, te recomiendo ver las primeras 20 lecciones. </span><em><span>&lt; Ver video &gt;</span></em></td><td><a href='https://jacometoss.github.io/python_para_todos/phython_para_todos_leccion_21.html'><span>Diapositiva</span></a></td><td><span>Intermedio</span></td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></tbody></table></figure><left><img src="C:\Users\toss\OneDrive\Escritorio\marp\logo_informatica_interactiva.JPG" alt="ii" style="zoom:15%;"></left><h2 id='redes-sociales-y-blogs'><strong><span>Redes sociales y blogs</span></strong></h2><p><span>Puedes seguirme en Facebook </span><a href='https://www.facebook.com/Mark-Polo-1920945868169736'><span>Mark Polo</span></a></p><h2 id='licencia'><strong><span>Licencia</span></strong></h2><p>&nbsp;</p><p><img src="https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-sa.svg" referrerpolicy="no-referrer" alt="Licencia Creative Commons">
+<span>Esta página forma parte del curso </span><strong><a href='https://jacometoss.github.io/python_para_todos/'><span>Python para todos</span></a></strong><span> por </span><a href='[https://www.electricalwiresizes.org/](https://jacometoss.github.io/python_para_todos/)'><span>Informatica Interactiva</span></a><span> se distribuye bajo una </span><a href='https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES'><span>Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</span></a><span>.</span></p><p><em><strong><span>©Copyright 2022 en adelante, </span><a href='https://#'><span>Marco Polo Jácome Toss</span></a></strong></em>
+<span>  </span><em><span>#python_para_todos</span></em></p><p>&nbsp;</p></div></div>
 </body>
 </html>
